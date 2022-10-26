@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --color1:hsl(0, 100%, 66%);
+    --color2:hsl(0, 0%, 100%);
+    --color3:hsl(270, 3%, 87%);
+    --color4:hsl(279, 6%, 55%);
+    --color5:hsl(278, 68%, 11%);
+    font-size: 3vw;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.background img {
+    width: 100%;
+}
+.background {
+    position: absolute;
+    z-index: -100;
+    height: 100%;
+    overflow: hidden;
+}
+
+main {
+    padding-top: 1rem;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    max-width: 1100px;
+}
+/* Card Display */
+.card-display {
+    height: 100%;
+    position: relative;
+    flex-basis: 43%;
+    color: hsl(0, 0%, 100%);
+    margin: 1rem;
+}
+.card-display > div {
+    position: absolute;
+    height: auto;
+    width: 80%;
+    max-width: 447px;
+    max-height: 245px;
+}
+.front-display-card {
+    bottom: 0;
+    left: 0;
+}
+.back-display-card {
+    top: 0;
+    right: 10px;
+    z-index: -1;
+}
+.card-bg {
+    z-index: -50;
+    width: 100%;
+}
+.card-display > div > *:not(.card-bg) {
+    position: absolute;
+    top: 0;
+}
+.front-display-card-content {
+    padding: 1.5rem;
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.front-display-card-content img{
+    width: 5rem;
+    flex-basis: 20%;
+}
+.front-card-bottom-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    flex-basis: 30%;
+}
+#card-number-display {
+    letter-spacing: 0.2rem;
+    text-align: center;
+    flex-basis: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+#card-number-display span {
+    width: 100%;
+}
+#cvc-display {
+    top: 44%;
+    left: 80%;
+}
+form {
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+}
+.form-control {
+    display: flex;
+    flex-direction: column;
+}
+.form-control p {
+    font-size: 0.7rem;
+}
+input:focus {
+    outline-width: 3px;
+    outline-style: solid;
+    outline-color: hsl(278, 68%, 11%);
+}
+
+label {
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+input {
+    font-family: 'Space Grotesk', sans-serif;
+    color: hsl(278, 68%, 11%);
+    height: 5rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: 1px solid hsl(270, 3%, 87%);
+}
+::placeholder {
+    color: hsl(279, 6%, 55%);
+    opacity: 1; /* Firefox */
+  }
+  
+:-ms-input-placeholder { 
+    color:hsl(279, 6%, 55%);
+  }
+  
+::-ms-input-placeholder { 
+    color: hsl(279, 6%, 55%);
+  }
+.form-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+.form-row .form-row {
+    gap: 0.5rem;
+}
+.form-row > input {
+    width: 5rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+button {
+    font-family: 'Space Grotesk', sans-serif;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(278, 68%, 11%);
+    border: none;
+    border-radius: 10px;
+    padding: 1.5rem 0;
+    width:100%
+}
+button:hover {
+    cursor: pointer;
+}
+.form-control > p {
+    color: red;
+}
+
+.content {
+    flex-basis: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.complete {
+    color: hsl(278, 68%, 11%);
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 2rem;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+    margin: auto;
+}
+.complete img {
+    width: 100px;
+}
+.complete p {
+    color: hsl(279, 6%, 55%);
+}
+input:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 376px) {
+    :root {
+        font-size: 17px;
+    }
+    .background {
+        position: absolute;
+    }
+    body {
+        display: flex;
+        align-items: center;
+    }
+    main {
+        width: 90vw;
+        flex-direction: row;
+        margin: 0 auto;
+        max-height: 540px;
+    }
+    input {
+        height: 3rem;
+    }
+    .back-display-card {
+        bottom: 0;
+        top: unset;
+    }
+    .front-display-card {
+        top: 0;
+    }
+    .card-display > div {
+        height: unset;
+        width: 100%;
+    }
+    .card-bg{
+        width: unset;
+    }
+    .card-display {
+        flex-basis: 60%;
+        margin: 0;
+    }
+    .content {
+        flex-basis: 40%;
+    }
+    input, button {
+        font-size: 1rem;
+    }
+
+}
+
+.hidden {
+    display: none;
+}
